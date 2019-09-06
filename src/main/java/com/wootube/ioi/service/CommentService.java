@@ -74,4 +74,8 @@ public class CommentService {
         });
         return commentResponseDtos;
     }
+
+    public List<Comment> findAllByVideoId(Long videoId) {
+        return commentRepository.findAllByVideoId(videoId);
+    }
 }

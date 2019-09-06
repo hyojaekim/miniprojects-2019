@@ -6,10 +6,13 @@ import com.wootube.ioi.domain.model.User;
 import com.wootube.ioi.domain.repository.CommentLikeRepository;
 import com.wootube.ioi.service.dto.CommentLikeResponseDto;
 import com.wootube.ioi.service.dto.CommentResponseDto;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -19,13 +22,15 @@ public class CommentLikeService {
     private final UserService userService;
     private final VideoService videoService;
     private final CommentService commentService;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    public CommentLikeService(CommentLikeRepository commentLikeRepository, UserService userService, VideoService videoService, CommentService commentService) {
+    public CommentLikeService(CommentLikeRepository commentLikeRepository, UserService userService, VideoService videoService, CommentService commentService, ModelMapper modelMapper) {
         this.commentLikeRepository = commentLikeRepository;
         this.userService = userService;
         this.videoService = videoService;
         this.commentService = commentService;
+        this.modelMapper = modelMapper;
     }
 
     public boolean existCommentLike(Long userId, Long commentId) {
@@ -81,6 +86,20 @@ public class CommentLikeService {
 
     public Long countByCommentId(Long commentId) {
         return commentLikeRepository.countByCommentId(commentId);
+    }
+
+    @Transactional
+    public List<CommentResponseDto> sortCommentByLikeCount(Long videoId) {
+        List<Comment> comments = commentService.findAllByVideoId(videoId);
+        List<CommentResponseDto> sortComments = new ArrayList<>();
+
+        Comparator<Comment> compare = Comparator.comparing((Comment comment) -> commentLikeRepository.countByCommentId(comment.getId()));
+
+        comments.stream()
+                .sorted(compare)
+                .forEach(comment -> sortComments.add(modelMapper.map(comment, CommentResponseDto.class)));
+
+        return sortComments;
     }
 
     @Transactional

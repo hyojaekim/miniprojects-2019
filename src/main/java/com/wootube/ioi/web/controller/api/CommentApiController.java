@@ -40,7 +40,7 @@ public class CommentApiController {
 
     @GetMapping("/sort/likecount")
     public ResponseEntity<List<CommentResponseDto>> sortCommentByLikeCount(@PathVariable Long videoId) {
-        List<CommentResponseDto> comments = commentService.sortComment(DESC_SORT_BY_UPDATE_TIME, videoId);
+        List<CommentResponseDto> comments = commentLikeService.sortCommentByLikeCount(videoId);
 
         saveCommentLikeByUserSession(comments);
         return ResponseEntity.ok(comments);
