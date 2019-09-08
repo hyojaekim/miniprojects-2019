@@ -5,6 +5,8 @@ import com.wootube.ioi.service.CommentService;
 import com.wootube.ioi.service.dto.CommentLikeResponseDto;
 import com.wootube.ioi.service.dto.CommentRequestDto;
 import com.wootube.ioi.service.dto.CommentResponseDto;
+import com.wootube.ioi.web.controller.exception.NotFoundSortDirectionException;
+import com.wootube.ioi.web.controller.exception.NotFoundSortException;
 import com.wootube.ioi.web.session.UserSession;
 import com.wootube.ioi.web.session.UserSessionManager;
 import org.springframework.data.domain.Sort;
@@ -17,6 +19,11 @@ import java.util.List;
 @RequestMapping("/api/videos/{videoId}/comments")
 @RestController
 public class CommentApiController {
+    private static final String UPDATE_TIME = "update-time";
+    private static final String LIKE_COUNT = "like-count";
+    private static final String DESCENDING = "desc";
+    private static final String ASCENDING = "asc";
+
     private static final Sort DESC_SORT_BY_UPDATE_TIME = new Sort(Sort.Direction.DESC, "updateTime");
     private static final Sort ASC_SORT_BY_UPDATE_TIME = new Sort(Sort.Direction.ASC, "updateTime");
 
@@ -30,20 +37,38 @@ public class CommentApiController {
         this.userSessionManager = userSessionManager;
     }
 
-    @GetMapping("/sort/updatetime")
-    public ResponseEntity<List<CommentResponseDto>> sortCommentByUpdateTime(@PathVariable Long videoId) {
-        List<CommentResponseDto> comments = commentService.sortComment(ASC_SORT_BY_UPDATE_TIME, videoId);
+    @GetMapping
+    public ResponseEntity<List<CommentResponseDto>> sortComment(@PathVariable Long videoId,
+                                                                @RequestParam(value = "sort") String sort,
+                                                                @RequestParam(value = "order") String order) {
+        List<CommentResponseDto> comments = findSort(videoId, sort, order);
 
         saveCommentLikeByUserSession(comments);
         return ResponseEntity.ok(comments);
     }
 
-    @GetMapping("/sort/likecount")
-    public ResponseEntity<List<CommentResponseDto>> sortCommentByLikeCount(@PathVariable Long videoId) {
-        List<CommentResponseDto> comments = commentService.sortComment(DESC_SORT_BY_UPDATE_TIME, videoId);
+    private List<CommentResponseDto> findSort(Long videoId, String sortName, String orderType) {
+        if (sortName.equals(LIKE_COUNT)) {
+            return commentLikeService.sortCommentByLikeCount(videoId);
+        }
 
-        saveCommentLikeByUserSession(comments);
-        return ResponseEntity.ok(comments);
+        if (sortName.equals(UPDATE_TIME)) {
+            return commentService.sortComment(findSortByUpdateTime(orderType), videoId);
+        }
+
+        throw new NotFoundSortException();
+    }
+
+    private Sort findSortByUpdateTime(String oderType) {
+        if (oderType.equals(ASCENDING)) {
+            return ASC_SORT_BY_UPDATE_TIME;
+        }
+
+        if (oderType.equals(DESCENDING)) {
+            return DESC_SORT_BY_UPDATE_TIME;
+        }
+
+        throw new NotFoundSortDirectionException();
     }
 
     private void saveCommentLikeByUserSession(List<CommentResponseDto> comments) {

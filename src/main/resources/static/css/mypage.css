@@ -5,7 +5,7 @@
     font-size: 1.0em;
 }
 
-.my-profile-image {]
+.my-profile-image {
     cursor: pointer;
 }
 
@@ -16,4 +16,9 @@
 
 .my-profile-image:hover:after {
     transition: opacity .3s;
+}
+
+.mypage-img-responsive {
+    max-width: 100%;
+    height: 100%;
 }
