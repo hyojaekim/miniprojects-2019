@@ -6,6 +6,8 @@ import com.wootube.ioi.domain.exception.NotMatchWriterException;
 import com.wootube.ioi.service.exception.NotFoundCommentException;
 import com.wootube.ioi.service.exception.NotFoundReplyException;
 import com.wootube.ioi.service.exception.NotFoundVideoException;
+import com.wootube.ioi.web.controller.exception.NotFoundSortDirectionException;
+import com.wootube.ioi.web.controller.exception.NotFoundSortException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -48,6 +50,18 @@ public class CommentControllerAdvice {
 
     @ExceptionHandler
     public ResponseEntity<String> handleNotMatchWriterException(NotMatchWriterException e) {
+        log.debug(e.getMessage());
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<String> handleNotFoundSortDirectionException(NotFoundSortDirectionException e) {
+        log.debug(e.getMessage());
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<String> handleNotFoundSortException(NotFoundSortException e) {
         log.debug(e.getMessage());
         return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
     }
