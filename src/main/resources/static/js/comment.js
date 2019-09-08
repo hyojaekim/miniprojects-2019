@@ -107,7 +107,7 @@ const commentButton = (function () {
         }
 
         const sortCommentByUpdateTime = () => {
-            const requestUri = `/api/videos/${videoId}/comments/sort/updatetime`;
+            const requestUri = `/api/videos/${videoId}/comments?sort=update-time&order=asc`;
 
             const callback = (response) => {
                 const commentListDiv = document.querySelector("#comment-area");
@@ -134,7 +134,8 @@ const commentButton = (function () {
         }
 
         const sortCommentByLikeCount = () => {
-            const requestUri = `/api/videos/${videoId}/comments/sort/likecount`;
+            const requestUri = `/api/videos/${videoId}/comments?sort=like-count&order=asc`;
+
             const callback = (response) => {
                 const commentListDiv = document.querySelector("#comment-area");
                 commentListDiv.innerHTML = "";
