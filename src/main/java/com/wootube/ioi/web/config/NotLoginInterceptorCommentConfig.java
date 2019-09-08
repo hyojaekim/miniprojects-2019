@@ -28,8 +28,7 @@ public class NotLoginInterceptorCommentConfig implements WebMvcConfigurer {
                 .addPathPatterns("/api/videos/**/comments/**/replies/**")
                 .addPathPatterns("/api/videos/**/comments/**/replies")
                 .excludePathPatterns(Arrays.asList(
-                        "/api/videos/**/comments/sort/updatetime",
-                        "/api/videos/**/comments/sort/likecount",
+                        "/api/videos/**/comments?sort=**",
                         "/api/videos/**/comments/**/replies/sort/updatetime"
                 ));
     }

@@ -28,8 +28,7 @@ public class NotLoginInterceptorConfig implements WebMvcConfigurer {
                 .addPathPatterns("/api/videos/**")
                 .addPathPatterns("/api/subscriptions/**")
                 .excludePathPatterns(Arrays.asList(
-                        "/api/videos/**/comments/sort/updatetime",
-                        "/api/videos/**/comments/sort/likecount",
+                        "/api/videos/**/comments?sort=**",
                         "/api/videos/**/comments/**/replies/sort/updatetime",
                         "/api/videos/**/likes/counts",
                         "/user/signup",
