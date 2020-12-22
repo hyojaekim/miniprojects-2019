@@ -1,6 +1,7 @@
-Wootube는 Youtube를 패러디한 서비스입니다.
 
 ![woowahan-ioi-logo](./src/main/resources/static/images/logo/woowahan-ioi-logo.png)
+
+Wootube는 Youtube를 모방한 서비스입니다.
 
 ## 🙋🏻 팀원 소개(Woowahan-IOI)
 
