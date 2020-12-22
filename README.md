@@ -1,7 +1,6 @@
-# Wootube
+![woowahan-ioi-logo](./src/main/resources/static/images/logo/woowahan-ioi-logo.png)
 
 Wootube는 Youtube를 패러디한 서비스입니다.
-![woowahan-ioi-logo](./src/main/resources/static/images/logo/woowahan-ioi-logo.png)
 
 # 🙋🏻 팀원 소개(Woowahan-IOI)
 
@@ -21,19 +20,12 @@ Wootube는 Youtube를 패러디한 서비스입니다.
 
 # 서비스 소개
 
-![기능 소개 (1)](./src/main/resources/static/images/asset/1-회원가입-로그인.png)
-
-![기능 소개 (2)](./src/main/resources/static/images/asset/2-회원정보-수정.png)
-
-![기능 소개 (3)](./src/main/resources/static/images/asset/3-회원탈퇴.png)
-
-![기능 소개 (4)](./src/main/resources/static/images/asset/4-메인페이지.png)
-
-![기능 소개 (5)](./src/main/resources/static/images/asset/5-동영상-업로드.png)
-
-![기능 소개 (6)](./src/main/resources/static/images/asset/6-동영상-조회.png)
-
-![기능 소개 (7)](./src/main/resources/static/images/asset/7-댓글-답글.png)
+|||
+|:--:|:--:|
+|![woowahan-ioi-logo](./src/main/resources/static/images/logo/woowahan-ioi-logo.png)|![기능 소개 (1)](./src/main/resources/static/images/asset/1-회원가입-로그인.png)|
+|![기능 소개 (2)](./src/main/resources/static/images/asset/2-회원정보-수정.png)|![기능 소개 (3)](./src/main/resources/static/images/asset/3-회원탈퇴.png)|
+|![기능 소개 (4)](./src/main/resources/static/images/asset/4-메인페이지.png)|![기능 소개 (5)](./src/main/resources/static/images/asset/5-동영상-업로드.png)|
+|![기능 소개 (6)](./src/main/resources/static/images/asset/6-동영상-조회.png)|![기능 소개 (7)](./src/main/resources/static/images/asset/7-댓글-답글.png)|
 
 # 🛠 기술 스택
 
@@ -57,14 +49,13 @@ Wootube는 Youtube를 패러디한 서비스입니다.
 
 # 🧑🏻‍💻 담당 역할 김효재(효오)
 
-| 분류 | 기능 |
+| 댓글, 답글 공통 | 댓글 |
 |:--:|:--:|
-| 댓글, 답글 공통 | 프론트 & 백엔드 |
-|| 작성(로그인 하지 않으면 작성 불가)|
-|| 조회 |
-|| 수정 |
-|| 삭제 |
-|| 최신순 정렬 |
-|| 좋아요 |
-|| 테스트 코드 |
-| 댓글 | 인기순 정렬 |
+| 프론트 & 백엔드 | 인기순 정렬 |
+| 작성(로그인 하지 않으면 작성 불가)||
+| 조회 ||
+| 수정 ||
+| 삭제 ||
+| 최신순 정렬 ||
+| 좋아요 ||
+| 테스트 코드 ||
