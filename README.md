@@ -1,7 +1,7 @@
 # Wootube
 
 Wootube는 Youtube를 패러디한 서비스입니다.
-![woowahan-ioi-logo](../miniprojects-2019/src/main/resources/static/images/logo/woowahan-ioi-logo.png)
+![woowahan-ioi-logo](./src/main/resources/static/images/logo/woowahan-ioi-logo.png)
 
 # 🙋🏻 팀원 소개(Woowahan-IOI)
 
@@ -21,19 +21,19 @@ Wootube는 Youtube를 패러디한 서비스입니다.
 
 # 서비스 소개
 
-![기능 소개 (1)](../miniprojects-2019/src/main/resources/static/images/asset/1-회원가입-로그인.png)
+![기능 소개 (1)](./src/main/resources/static/images/asset/1-회원가입-로그인.png)
 
-![기능 소개 (2)](../miniprojects-2019/src/main/resources/static/images/asset/2-회원정보-수정.png)
+![기능 소개 (2)](./src/main/resources/static/images/asset/2-회원정보-수정.png)
 
-![기능 소개 (3)](../miniprojects-2019/src/main/resources/static/images/asset/3-회원탈퇴.png)
+![기능 소개 (3)](./src/main/resources/static/images/asset/3-회원탈퇴.png)
 
-![기능 소개 (4)](../miniprojects-2019/src/main/resources/static/images/asset/4-메인페이지.png)
+![기능 소개 (4)](./src/main/resources/static/images/asset/4-메인페이지.png)
 
-![기능 소개 (5)](../miniprojects-2019/src/main/resources/static/images/asset/5-동영상-업로드.png)
+![기능 소개 (5)](./src/main/resources/static/images/asset/5-동영상-업로드.png)
 
-![기능 소개 (6)](../miniprojects-2019/src/main/resources/static/images/asset/6-동영상-조회.png)
+![기능 소개 (6)](./src/main/resources/static/images/asset/6-동영상-조회.png)
 
-![기능 소개 (7)](../miniprojects-2019/src/main/resources/static/images/asset/7-댓글-답글.png)
+![기능 소개 (7)](./src/main/resources/static/images/asset/7-댓글-답글.png)
 
 # 🛠 기술 스택
 
