@@ -1,8 +1,6 @@
 
 ![woowahan-ioi-logo](./src/main/resources/static/images/logo/woowahan-ioi-logo.png)
 
-Wootube는 Youtube를 모방한 서비스입니다.
-
 ## 🙋🏻 팀원 소개(Woowahan-IOI)
 
 |이름|닉네임|Github|
