@@ -14,7 +14,7 @@
 
 ## 🔗 링크
 
-|커밋 메시지 스타일|브랜치 전략|데모 영상|
+|브랜치 전략|커밋 메시지 스타일|데모 영상|
 |:--:|:--:|:--:|
 |[링크](https://github.com/woowahan-ioi/miniprojects-2019/wiki/IOI-Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EA%B4%80%EB%A6%AC-%EC%A0%84%EB%9E%B5)|[링크](https://github.com/woowahan-ioi/miniprojects-2019/wiki/IOI-Git-%EC%BB%A4%EB%B0%8B-%EB%A9%94%EC%8B%9C%EC%A7%80-%EC%8A%A4%ED%83%80%EC%9D%BC-%EA%B0%80%EC%9D%B4%EB%93%9C)|[링크](https://www.youtube.com/watch?v=aFqw6a7gvyE&ab_channel=%EC%9A%B0%EC%95%84%ED%95%9CTech)|
 <br>
